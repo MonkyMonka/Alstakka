@@ -3,9 +3,6 @@ package com.monky.alstakka.entity.custom;
 import com.monky.alstakka.entity.ModEntityTypes;
 import com.monky.alstakka.entity.variant.AlstakkaVariant;
 import net.minecraft.Util;
-import net.minecraft.client.model.SheepModel;
-import net.minecraft.client.renderer.entity.CamelRenderer;
-import net.minecraft.client.renderer.entity.SheepRenderer;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
@@ -25,13 +22,11 @@ import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.ai.navigation.GroundPathNavigation;
-import net.minecraft.world.entity.animal.Sheep;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.vehicle.DismountHelper;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.item.LeadItem;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
@@ -40,11 +35,6 @@ import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.event.ForgeEventFactory;
 import org.jetbrains.annotations.Nullable;
-import software.bernie.example.client.model.entity.MutantZombieModel;
-import software.bernie.example.client.renderer.entity.FakeGlassRenderer;
-import software.bernie.example.client.renderer.entity.GremlinRenderer;
-import software.bernie.example.client.renderer.entity.MutantZombieRenderer;
-import software.bernie.example.entity.FakeGlassEntity;
 import software.bernie.geckolib.animatable.GeoEntity;
 import software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache;
 import software.bernie.geckolib.core.animation.AnimatableManager;
@@ -166,13 +156,13 @@ public class AlstakkaEntity extends TamableAnimal implements PlayerRideable, Geo
 
         if (this.isBaby()) {
             return super.mobInteract(player, hand);
-        } else {
+        } else if (isTame()) {
             player.startRiding(this);
         }
 
         return super.mobInteract(player, hand);
     }
-
+    
     @Override
     public void readAdditionalSaveData(CompoundTag tag) {
         super.readAdditionalSaveData(tag);
