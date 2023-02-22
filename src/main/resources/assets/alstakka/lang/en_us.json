@@ -1,4 +1,6 @@
 {
   "item.alstakka.alstakka_spawn_egg": "Alstakka Spawn Egg",
-  "entity.alstakka.alstakka": "Alstakka"
+  "entity.alstakka.alstakka": "Alstakka",
+
+  "block.alstakka.bottle_rack": "Bottle Rack"
 }
