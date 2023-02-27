@@ -1,4 +1,4 @@
 package com.monky.alstakka.datagen;
 
-public class ModBlockLootTables {
+public class ModBlockLootTables extends BlockLoot {
 }
