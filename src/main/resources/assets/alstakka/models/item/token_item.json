@@ -1,3 +1,6 @@
 {
-  "parent": "minecraft:item/token_item"
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "alstakka:item/token_item"
+  }
 }

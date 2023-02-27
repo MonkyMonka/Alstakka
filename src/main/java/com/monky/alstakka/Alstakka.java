@@ -18,7 +18,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import software.bernie.geckolib.GeckoLib;
 
-// The value here should match an entry in the META-INF/mods.toml file
 @Mod(com.monky.alstakka.Alstakka.MOD_ID)
 public class Alstakka {
     public static final String MOD_ID = "alstakka";
@@ -60,6 +59,9 @@ public class Alstakka {
         }
         if (event.getTab() == CreativeModeTabs.FUNCTIONAL_BLOCKS) {
             event.accept(ModBlocks.BOTTLE_RACK);
+        }
+        if (event.getTab() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
+            event.accept(ModItems.TOKEN_ITEM);
         }
     }
 }
