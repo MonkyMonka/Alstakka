@@ -1,6 +1,7 @@
 package com.monky.alstakka.datagen;
 
 import com.monky.alstakka.Alstakka;
+import com.monky.alstakka.block.ModBlocks;
 import net.minecraft.data.PackOutput;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.client.model.generators.BlockStateProvider;

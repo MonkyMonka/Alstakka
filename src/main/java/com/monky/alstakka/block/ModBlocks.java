@@ -18,7 +18,7 @@ public class ModBlocks {
     public static final DeferredRegister<Block> BLOCKS =
             DeferredRegister.create(ForgeRegistries.BLOCKS, Alstakka.MOD_ID);
 
-    public static final RegistryObject<Block> BOTTLE_RACK = registerBlock("bottle_rack",
+    public static final RegistryObject<Block> BOTTLE_RACK_BLOCK = registerBlock("bottle_rack_block",
             () -> new Block(BlockBehaviour.Properties.of(Material.WOOD)
                     .strength(6f).requiresCorrectToolForDrops()));
 

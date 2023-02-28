@@ -58,7 +58,7 @@ public class Alstakka {
             event.accept(ModItems.ALSTAKKA_SPAWN_EGG);
         }
         if (event.getTab() == CreativeModeTabs.FUNCTIONAL_BLOCKS) {
-            event.accept(ModBlocks.BOTTLE_RACK);
+            event.accept(ModBlocks.BOTTLE_RACK_BLOCK);
         }
         if (event.getTab() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
             event.accept(ModItems.TOKEN_ITEM);

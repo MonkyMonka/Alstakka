@@ -1,5 +1,7 @@
 package com.monky.alstakka.datagen;
 
+import com.monky.alstakka.Alstakka;
+import com.monky.alstakka.item.ModItems;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;

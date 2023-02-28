@@ -1,5 +1,6 @@
 package com.monky.alstakka.datagen;
 
+import com.monky.alstakka.Alstakka;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
 import net.minecraftforge.common.data.ExistingFileHelper;
