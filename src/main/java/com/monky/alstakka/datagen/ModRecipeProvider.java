@@ -20,7 +20,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
     protected void buildRecipes(Consumer<FinishedRecipe> consumer) {
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.BOTTLE_RACK_BLOCK.get())
-                .define('B', ItemTags.WOODEN_SLABS)
+                .define('W', ItemTags.WOODEN_SLABS)
                 .pattern("WWW")
                 .pattern("WWW")
                 .pattern("WWW")
