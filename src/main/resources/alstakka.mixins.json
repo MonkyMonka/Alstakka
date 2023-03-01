@@ -1,0 +1,12 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.monky.alstakka.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "refmap": "alstakka.refmap.json",
+  "mixins": [
+    "MixinDeathScreen"
+  ],
+  "client": [
+  ]
+}
