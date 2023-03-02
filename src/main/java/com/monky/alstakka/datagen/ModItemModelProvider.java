@@ -19,6 +19,7 @@ public class ModItemModelProvider extends ItemModelProvider {
     protected void registerModels() {
         eggItem(ModItems.ALSTAKKA_SPAWN_EGG);
         simpleItem(ModItems.TOKEN_ITEM);
+        simpleItem(ModItems.DIP_ITEM);
     }
 
     private ItemModelBuilder eggItem(RegistryObject<Item> item) {
