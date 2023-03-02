@@ -1,6 +1,9 @@
 package com.monky.alstakka.datagen;
 
 import com.monky.alstakka.Alstakka;
+import com.monky.alstakka.datagen.client.ModBlockStateProvider;
+import com.monky.alstakka.datagen.client.ModItemModelProvider;
+import com.monky.alstakka.datagen.client.lang.ModEnUsProvider;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
 import net.minecraftforge.common.data.ExistingFileHelper;
@@ -16,6 +19,7 @@ public class DataGenerators {
         PackOutput packOutput = generator.getPackOutput();
         ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
 
+        generator.addProvider(true, new ModEnUsProvider(packOutput));
         generator.addProvider(true, new ModRecipeProvider(packOutput));
         generator.addProvider(true, ModLootTableProvider.create(packOutput));
         generator.addProvider(true, new ModBlockStateProvider(packOutput, existingFileHelper));
