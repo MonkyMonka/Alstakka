@@ -1,4 +1,4 @@
-package com.monky.alstakka.datagen;
+package com.monky.alstakka.datagen.client;
 
 import com.monky.alstakka.Alstakka;
 import com.monky.alstakka.block.ModBlocks;
