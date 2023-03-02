@@ -60,12 +60,14 @@ public class Alstakka {
     public void addCreative(CreativeModeTabEvent.BuildContents event) {
         if (event.getTab() == CreativeModeTabs.SPAWN_EGGS) {
             event.accept(ModItems.ALSTAKKA_SPAWN_EGG);
+            event.accept(ModItems.DUPE_SPAWN_EGG);
         }
         if (event.getTab() == CreativeModeTabs.FUNCTIONAL_BLOCKS) {
             event.accept(ModBlocks.BOTTLE_RACK_BLOCK);
         }
         if (event.getTab() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
             event.accept(ModItems.TOKEN_ITEM);
+            event.accept(ModItems.DIP_ITEM);
         }
     }
 }

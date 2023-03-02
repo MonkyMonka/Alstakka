@@ -17,6 +17,7 @@ public class ModEnUsProvider extends LanguageProvider {
         // Items
         add(ModItems.ALSTAKKA_SPAWN_EGG.get(), "Alstakka Spawn Egg");
         add(ModItems.DUPE_SPAWN_EGG.get(), "Dupe Spawn Egg");
+        add(ModItems.DIP_ITEM.get(), "Dupe");
         add(ModItems.TOKEN_ITEM.get(), "Respawn Token");
         // Mobs
         add(ModEntityTypes.ALSTAKKA.get(), "Alstakka");
