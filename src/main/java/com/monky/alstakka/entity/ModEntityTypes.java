@@ -2,6 +2,7 @@ package com.monky.alstakka.entity;
 
 import com.monky.alstakka.Alstakka;
 import com.monky.alstakka.entity.custom.AlstakkaEntity;
+import com.monky.alstakka.entity.custom.DipEntity;
 import com.monky.alstakka.entity.custom.DupeEntity;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
@@ -22,9 +23,14 @@ public class ModEntityTypes {
                             .build(new ResourceLocation(Alstakka.MOD_ID, "alstakka").toString()));
     public static final RegistryObject<EntityType<DupeEntity>> DUPE =
             ENTITY_TYPES.register("dupe",
-                    () -> EntityType.Builder.of(AlstakkaEntity::new, MobCategory.CREATURE)
+                    () -> EntityType.Builder.of(DupeEntity::new, MobCategory.CREATURE)
                             .sized(1.8f, 5.5f)
                             .build(new ResourceLocation(Alstakka.MOD_ID, "dupe").toString()));
+    public static final RegistryObject<EntityType<DipEntity>> DIP =
+            ENTITY_TYPES.register("dip",
+                    () -> EntityType.Builder.of(DipEntity::new, MobCategory.CREATURE)
+                            .sized(1.8f, 5.5f)
+                            .build(new ResourceLocation(Alstakka.MOD_ID, "dip").toString()));
 
     public static void register(IEventBus eventBus) {
         ENTITY_TYPES.register(eventBus);

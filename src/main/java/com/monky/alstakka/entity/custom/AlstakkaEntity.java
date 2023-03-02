@@ -22,6 +22,7 @@ import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.ai.navigation.GroundPathNavigation;
+import net.minecraft.world.entity.animal.horse.Horse;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.vehicle.DismountHelper;
 import net.minecraft.world.item.Item;
@@ -44,8 +45,6 @@ import software.bernie.geckolib.core.animation.RawAnimation;
 import software.bernie.geckolib.core.object.PlayState;
 import software.bernie.geckolib.util.GeckoLibUtil;
 
-import static net.minecraft.world.entity.animal.horse.AbstractHorse.createBaseHorseAttributes;
-
 public class AlstakkaEntity extends TamableAnimal implements PlayerRideable, GeoEntity {
     private AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
 
@@ -60,8 +59,8 @@ public class AlstakkaEntity extends TamableAnimal implements PlayerRideable, Geo
     private static final EntityDataAccessor<Integer> DATA_ID_TYPE_VARIANT =
             SynchedEntityData.defineId(AlstakkaEntity.class, EntityDataSerializers.INT);
 
-    public static AttributeSupplier setAttributes() {
-        return createBaseHorseAttributes()
+    public static AttributeSupplier getAlstakkaAttributes() {
+        return Horse.createBaseHorseAttributes()
                 .add(Attributes.MAX_HEALTH, 32.0D)
                 .add(Attributes.MOVEMENT_SPEED, (double)0.18F).build();
     }

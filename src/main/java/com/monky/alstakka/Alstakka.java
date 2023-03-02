@@ -2,6 +2,8 @@ package com.monky.alstakka;
 
 import com.monky.alstakka.block.ModBlocks;
 import com.monky.alstakka.client.render.entity.AlstakkaRenderer;
+import com.monky.alstakka.client.render.entity.DipRenderer;
+import com.monky.alstakka.client.render.entity.DupeRenderer;
 import com.monky.alstakka.entity.ModEntityTypes;
 import com.monky.alstakka.item.ModItems;
 import net.minecraft.client.renderer.entity.EntityRenderers;
@@ -49,6 +51,8 @@ public class Alstakka {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
             EntityRenderers.register(ModEntityTypes.ALSTAKKA.get(), AlstakkaRenderer::new);
+            EntityRenderers.register(ModEntityTypes.DUPE.get(), DupeRenderer::new);
+            EntityRenderers.register(ModEntityTypes.DIP.get(), DipRenderer::new);
         }
     }
 

@@ -1,25 +1,54 @@
 package com.monky.alstakka.entity.custom;
 
-import net.minecraft.world.entity.Entity;
+import com.monky.alstakka.entity.ModEntityTypes;
+import com.monky.alstakka.entity.variant.AlstakkaVariant;
+import com.monky.alstakka.entity.variant.DupeVariant;
+import net.minecraft.core.BlockPos;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.util.RandomSource;
+import net.minecraft.world.entity.AgeableMob;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.Mob;
+import net.minecraft.world.entity.MobSpawnType;
+import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
+import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.entity.ai.goal.*;
+import net.minecraft.world.entity.animal.Animal;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
-import software.bernie.geckolib.animatable.GeoEntity;
-import software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache;
-import software.bernie.geckolib.core.animation.AnimatableManager;
+import net.minecraft.world.level.LevelAccessor;
+import net.minecraftforge.common.ForgeMod;
 
-public class DupeEntity implements GeoEntity {
+import javax.annotation.Nullable;
 
-    public DupeEntity(EntityType<? extends Entity> pEntityType, Level pLevel) {
-        super(pEntityType, pLevel);
+public class DupeEntity extends Animal {
+    public DupeEntity(EntityType<? extends Animal> type, Level level) {
+        super(type, level);
+    }
+
+    @Nullable
+    @Override
+    public AgeableMob getBreedOffspring(ServerLevel level, AgeableMob mob) {
+        return ModEntityTypes.DUPE.get().create(level);
+    }
+
+    public DupeVariant getVariant() {
+        return DupeVariant.byId(this.getTypeVariant() & 255);
     }
 
     @Override
-    public void registerControllers(AnimatableManager.ControllerRegistrar controllers) {
-
+    protected void registerGoals() {
+        this.goalSelector.addGoal(0, new FloatGoal(this));
+        this.goalSelector.addGoal(1, new PanicGoal(this, 1.25D));
+        this.goalSelector.addGoal(3, new BreedGoal(this, 1.0D));
+        this.goalSelector.addGoal(4, new FollowParentGoal(this, 1.1D));
+        this.goalSelector.addGoal(5, new WaterAvoidingRandomStrollGoal(this, 1.0D));
+        this.goalSelector.addGoal(6, new LookAtPlayerGoal(this, Player.class, 6.0F));
+        this.goalSelector.addGoal(7, new RandomLookAroundGoal(this));
     }
 
-    @Override
-    public AnimatableInstanceCache getAnimatableInstanceCache() {
-        return null;
+    public static AttributeSupplier.Builder getDupeAttributes() {
+        return Mob.createMobAttributes().add(ForgeMod.ENTITY_GRAVITY.get(), 1.5f).add(Attributes.MAX_HEALTH, 25.0D).add(Attributes.MOVEMENT_SPEED, 0.7246D);
     }
+
 }
