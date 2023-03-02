@@ -4,6 +4,9 @@ import com.monky.alstakka.entity.ModEntityTypes;
 import com.monky.alstakka.entity.variant.AlstakkaVariant;
 import com.monky.alstakka.entity.variant.DupeVariant;
 import net.minecraft.core.BlockPos;
+import net.minecraft.network.syncher.EntityDataAccessor;
+import net.minecraft.network.syncher.EntityDataSerializers;
+import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.AgeableMob;
@@ -36,6 +39,14 @@ public class DupeEntity extends Animal {
         return DupeVariant.byId(this.getTypeVariant() & 255);
     }
 
+    private int getTypeVariant() {
+        return this.entityData.get(DATA_ID_TYPE_VARIANT);
+    }
+
+    private void setVariant(DupeVariant variant) {
+        this.entityData.set(DATA_ID_TYPE_VARIANT, variant.getId() & 255);
+    }
+
     @Override
     protected void registerGoals() {
         this.goalSelector.addGoal(0, new FloatGoal(this));
@@ -46,6 +57,10 @@ public class DupeEntity extends Animal {
         this.goalSelector.addGoal(6, new LookAtPlayerGoal(this, Player.class, 6.0F));
         this.goalSelector.addGoal(7, new RandomLookAroundGoal(this));
     }
+
+    private static final EntityDataAccessor<Integer> DATA_ID_TYPE_VARIANT =
+            SynchedEntityData.defineId(AlstakkaEntity.class, EntityDataSerializers.INT);
+
 
     public static AttributeSupplier.Builder getDupeAttributes() {
         return Mob.createMobAttributes().add(ForgeMod.ENTITY_GRAVITY.get(), 1.5f).add(Attributes.MAX_HEALTH, 25.0D).add(Attributes.MOVEMENT_SPEED, 0.7246D);

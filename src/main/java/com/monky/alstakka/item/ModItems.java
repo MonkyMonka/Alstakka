@@ -17,6 +17,8 @@ public class ModItems {
 
     public static final RegistryObject<Item> ALSTAKKA_SPAWN_EGG = ITEMS.register("alstakka_spawn_egg",
             () -> new ForgeSpawnEggItem(ModEntityTypes.ALSTAKKA, 0xefcfa4, 0xbd9d73, new Item.Properties()));
+    public static final RegistryObject<Item> DUPE_SPAWN_EGG = ITEMS.register("dupe_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntityTypes.DUPE, 0x6e7f80, 0x536872, new Item.Properties()));
     public static final RegistryObject<Item> TOKEN_ITEM = ITEMS.register("token_item",
             () -> new TokenItem(new Item.Properties().stacksTo(1)));
     public static final RegistryObject<Item> DIP_ITEM = ITEMS.register("dip_item",

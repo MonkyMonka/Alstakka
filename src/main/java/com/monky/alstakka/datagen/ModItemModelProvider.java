@@ -18,6 +18,7 @@ public class ModItemModelProvider extends ItemModelProvider {
     @Override
     protected void registerModels() {
         eggItem(ModItems.ALSTAKKA_SPAWN_EGG);
+        eggItem(ModItems.DUPE_SPAWN_EGG);
         simpleItem(ModItems.TOKEN_ITEM);
         simpleItem(ModItems.DIP_ITEM);
     }
