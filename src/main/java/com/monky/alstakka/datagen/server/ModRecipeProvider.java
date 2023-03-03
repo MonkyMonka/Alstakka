@@ -1,4 +1,4 @@
-package com.monky.alstakka.datagen;
+package com.monky.alstakka.datagen.server;
 
 import com.monky.alstakka.block.ModBlocks;
 import com.monky.alstakka.item.ModItems;

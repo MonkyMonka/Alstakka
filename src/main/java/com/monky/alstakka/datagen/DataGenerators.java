@@ -4,6 +4,7 @@ import com.monky.alstakka.Alstakka;
 import com.monky.alstakka.datagen.client.ModBlockStateProvider;
 import com.monky.alstakka.datagen.client.ModItemModelProvider;
 import com.monky.alstakka.datagen.client.lang.ModEnUsProvider;
+import com.monky.alstakka.datagen.server.ModRecipeProvider;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
 import net.minecraftforge.common.data.ExistingFileHelper;
