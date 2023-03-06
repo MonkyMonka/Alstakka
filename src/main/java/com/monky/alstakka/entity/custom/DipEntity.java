@@ -25,7 +25,6 @@ public class DipEntity extends Animal {
     public DipEntity(EntityType<? extends Animal> type, Level level) {
         super(type, level);
     }
-
     @Nullable
     @Override
     public AgeableMob getBreedOffspring(ServerLevel level, AgeableMob mob) {
