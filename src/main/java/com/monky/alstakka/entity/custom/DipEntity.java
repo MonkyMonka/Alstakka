@@ -13,6 +13,7 @@ import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.*;
+import net.minecraft.world.entity.ai.navigation.GroundPathNavigation;
 import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
@@ -24,6 +25,10 @@ import javax.annotation.Nullable;
 public class DipEntity extends Animal {
     public DipEntity(EntityType<? extends Animal> type, Level level) {
         super(type, level);
+        this.maxUpStep = 1.5F;
+        GroundPathNavigation groundpathnavigation = (GroundPathNavigation)this.getNavigation();
+        groundpathnavigation.setCanFloat(true);
+        groundpathnavigation.setCanWalkOverFences(true);
     }
     @Nullable
     @Override
@@ -82,7 +87,7 @@ public class DipEntity extends Animal {
     }
 
     private static final EntityDataAccessor<Integer> DATA_ID_TYPE_VARIANT =
-            SynchedEntityData.defineId(DupeEntity.class, EntityDataSerializers.INT);
+            SynchedEntityData.defineId(DipEntity.class, EntityDataSerializers.INT);
 
 
     public static AttributeSupplier.Builder getDipAttributes() {
