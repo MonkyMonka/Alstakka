@@ -6,7 +6,9 @@ import com.monky.alstakka.client.render.entity.DipRenderer;
 import com.monky.alstakka.client.render.entity.DupeRenderer;
 import com.monky.alstakka.entity.ModEntityTypes;
 import com.monky.alstakka.item.ModItems;
+import net.minecraft.client.renderer.entity.ArrowRenderer;
 import net.minecraft.client.renderer.entity.EntityRenderers;
+import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.CreativeModeTabEvent;
@@ -53,6 +55,7 @@ public class Alstakka {
             EntityRenderers.register(ModEntityTypes.ALSTAKKA.get(), AlstakkaRenderer::new);
             EntityRenderers.register(ModEntityTypes.DUPE.get(), DupeRenderer::new);
             EntityRenderers.register(ModEntityTypes.DIP.get(), DipRenderer::new);
+            EntityRenderers.register(ModEntityTypes.THROWNDIP.get(), ThrownItemRenderer::new);
         }
     }
 
