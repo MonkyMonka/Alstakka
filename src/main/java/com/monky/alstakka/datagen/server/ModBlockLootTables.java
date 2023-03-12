@@ -16,6 +16,7 @@ public class ModBlockLootTables extends BlockLootSubProvider {
     @Override
     protected void generate() {
         dropSelf(ModBlocks.BOTTLE_RACK_BLOCK.get());
+        dropSelf(ModBlocks.OPALIZED_BONE_BLOCK.get());
 
         //add(ModBlocks.BLACK_OPAL_ORE.get(),
         //        (block) -> createOreDrop(ModBlocks.BLACK_OPAL_ORE.get(), ModItems.RAW_BLACK_OPAL.get()));

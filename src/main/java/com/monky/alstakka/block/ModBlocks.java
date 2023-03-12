@@ -5,6 +5,7 @@ import com.monky.alstakka.item.ModItems;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -21,6 +22,11 @@ public class ModBlocks {
     public static final RegistryObject<Block> BOTTLE_RACK_BLOCK = registerBlock("bottle_rack_block",
             () -> new Block(BlockBehaviour.Properties.of(Material.WOOD)
                     .strength(6f).requiresCorrectToolForDrops()));
+
+    public static final RegistryObject<Block> OPALIZED_BONE_BLOCK = registerBlock("opalized_bone_block",
+            () -> new RotatedPillarBlock(BlockBehaviour.Properties.of(Material.STONE)
+                    .strength(6f).requiresCorrectToolForDrops()));
+
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn =  BLOCKS.register(name, block);

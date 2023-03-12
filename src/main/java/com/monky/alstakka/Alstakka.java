@@ -4,11 +4,10 @@ import com.monky.alstakka.block.ModBlocks;
 import com.monky.alstakka.client.render.entity.AlstakkaRenderer;
 import com.monky.alstakka.client.render.entity.DipRenderer;
 import com.monky.alstakka.client.render.entity.DupeRenderer;
+import com.monky.alstakka.client.render.entity.ThrownDipRenderer;
 import com.monky.alstakka.entity.ModEntityTypes;
 import com.monky.alstakka.item.ModItems;
-import net.minecraft.client.renderer.entity.ArrowRenderer;
 import net.minecraft.client.renderer.entity.EntityRenderers;
-import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.CreativeModeTabEvent;
@@ -55,7 +54,7 @@ public class Alstakka {
             EntityRenderers.register(ModEntityTypes.ALSTAKKA.get(), AlstakkaRenderer::new);
             EntityRenderers.register(ModEntityTypes.DUPE.get(), DupeRenderer::new);
             EntityRenderers.register(ModEntityTypes.DIP.get(), DipRenderer::new);
-            EntityRenderers.register(ModEntityTypes.THROWNDIP.get(), ThrownItemRenderer::new);
+            EntityRenderers.register(ModEntityTypes.THROWNDIP.get(), ThrownDipRenderer::new);
         }
     }
 
@@ -65,6 +64,11 @@ public class Alstakka {
             event.accept(ModItems.ALSTAKKA_SPAWN_EGG);
             event.accept(ModItems.DUPE_SPAWN_EGG);
         }
+
+        if (event.getTab() == CreativeModeTabs.BUILDING_BLOCKS) {
+            event.accept(ModBlocks.OPALIZED_BONE_BLOCK);
+        }
+
         if (event.getTab() == CreativeModeTabs.FUNCTIONAL_BLOCKS) {
             event.accept(ModBlocks.BOTTLE_RACK_BLOCK);
         }
