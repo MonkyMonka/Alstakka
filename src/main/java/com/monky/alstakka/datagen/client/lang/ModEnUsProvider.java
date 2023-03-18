@@ -27,6 +27,8 @@ public class ModEnUsProvider extends LanguageProvider {
         add(ModEntityTypes.ALSTAKKA.get(), "Alstakka");
         add(ModEntityTypes.DUPE.get(), "Dupe");
         add(ModEntityTypes.DIP.get(), "Dip");
+        // UIs
+        add("alstakka.deathScreen.respawnpoints", "Select a respawn point!");
 
     }
 
